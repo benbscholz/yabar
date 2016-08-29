@@ -3,8 +3,10 @@ CPPFLAGS += -DVERSION=\"$(VERSION)\" -D_POSIX_C_SOURCE=199309L -DYA_INTERNAL -DY
 			-DYA_ENV_VARS -DYA_INTERNAL_EWMH -DYA_ICON -DYA_NOWIN_COL -DYA_MUTEX -DYA_VAR_WIDTH
 CFLAGS += -std=c99 -Iinclude -pedantic -Wall -Os `pkg-config --cflags pango pangocairo libconfig gdk-pixbuf-2.0`
 CFLAGS += `pkg-config dbus-1 --cflags`
+CFLAGS += `pkg-config alsa --cflags`
 LDLIBS += -lxcb -lpthread -lxcb-randr -lxcb-ewmh `pkg-config --libs pango pangocairo libconfig gdk-pixbuf-2.0`
 LDLIBS += `pkg-config --libs dbus-1`
+LDLIBS += `pkg-config --libs alsa`
 PROGRAM := yabar
 PREFIX ?= /usr
 BINPREFIX ?= $(PREFIX)/bin
