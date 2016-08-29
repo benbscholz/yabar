@@ -28,6 +28,7 @@
 #include <signal.h>
 #include <getopt.h>
 #include <libconfig.h>
+#include <dbus/dbus.h>
 
 #include <xcb/randr.h>
 #include <xcb/xcb_ewmh.h>
